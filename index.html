@@ -6,101 +6,82 @@
   <title>The Kristal Effect — Galactic Nomad</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-  body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    color: #f0f8ff;
-    text-align: center;
-    background-color: #0d0d2b;
-    background-image: 
-      url('https://www.transparenttextures.com/patterns/stardust.png'), 
-      linear-gradient(180deg, #0a0a23, #0d0d2b);
-    background-repeat: repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #f0f8ff;
+      text-align: center;
+      background-color: #0d0d2b;
+      background-image: 
+        url('https://www.transparenttextures.com/patterns/stardust.png'), 
+        linear-gradient(180deg, #0a0a23, #0d0d2b);
+      background-repeat: repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    color: #ffffff;
-    text-shadow: 0 0 8px #8ab4f8;
-  }
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      color: #ffffff;
+      text-shadow: 0 0 8px #8ab4f8;
+    }
 
-  h2 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #cbd5e1;
-    margin-bottom: 2rem;
-  }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+    }
 
-  .button {
-    display: inline-block;
-    margin: 0.5rem;
-    padding: 0.7rem 1.5rem;
-    border: 2px solid #90cdf4;
-    border-radius: 30px;
-    background: transparent;
-    color: #90cdf4;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
 
-  .button:hover {
-    background-color: #90cdf4;
-    color: #0f172a;
-  }
+    .social-icons img {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ffff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-  .project {
-    max-width: 600px;
-    margin: 3rem auto;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-  }
+    .social-icons img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #00ffff;
+    }
 
-  .project h3 {
-    font-size: 1.4rem;
-    color: #f9fafb;
-  }
+    .project {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+    }
 
-  .project p {
-    font-size: 1rem;
-    color: #cbd5e1;
-  }
+    .project h3 {
+      font-size: 1.4rem;
+      color: #f9fafb;
+    }
 
-  footer {
-    margin-top: 3rem;
-    font-size: 0.8rem;
-    color: #94a3b8;
-  }
+    .project p {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
 
-  /* 👇 Glowing Icon Styles */
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
-
-  .social-icons img {
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #00ffff;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .social-icons img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px #00ffff;
-  }
-</style>
-
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
 
@@ -108,34 +89,31 @@
   <h2>Galactic Nomad</h2>
 
   <div class="social-icons">
-  <a href="https://tiktok.com/@thekristaleffect" target="_blank">
-    <img src="tiktok_icon.png" alt="TikTok">
-  </a>
-  <a href="https://github.com/thekristaleffect" target="_blank">
-    <img src="github_icon.png" alt="GitHub">
-  </a>
-  <a href="https://www.pinterest.com/thekristaleffect/" target="_blank">
-    <img src="pinterest_icon.png" alt="Pinterest">
-  </a>
-  <a href="https://www.instagram.com/thekristaleffect/" target="_blank">
-    <img src="instagram_icon.png" alt="Instagram">
-  </a>
-  <a href="https://youtube.com/@thekristaleffect" target="_blank">
-    <img src="youtube_icon.png" alt="YouTube">
-  </a>
-</div>
-
-
-  
+    <a href="https://tiktok.com/@thekristaleffect" target="_blank">
+      <img src="tiktok_icon.png" alt="TikTok">
+    </a>
+    <a href="https://github.com/thekristaleffect" target="_blank">
+      <img src="github_icon.png" alt="GitHub">
+    </a>
+    <a href="https://www.pinterest.com/thekristaleffect/" target="_blank">
+      <img src="pinterest_icon.png" alt="Pinterest">
+    </a>
+    <a href="https://www.instagram.com/thekristaleffect/" target="_blank">
+      <img src="instagram_icon.png" alt="Instagram">
+    </a>
+    <a href="https://youtube.com/@thekristaleffect" target="_blank">
+      <img src="youtube_icon.png" alt="YouTube">
+    </a>
+  </div>
 
   <div class="project">
     <h3>Galactic Nomad</h3>
     <p>Exploring the cosmos through travel and tech. Exploring Digital Transformation</p>
-  </div> 
+  </div>
 
   <footer>
     © 2025 The Kristal Effect | Galactic Nomad | Built on GitHub Pages
   </footer>
 
 </body>
-</html> 
+</html>
