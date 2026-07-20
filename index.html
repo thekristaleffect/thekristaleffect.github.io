@@ -1,137 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Kristal Effect — Galactic Nomad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Kristal Effect</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+    :root {
+      --pink: #e9a6b7;
+      --deep-pink: #cf8297;
+      --light-pink: #fae9ee;
+      --cream: #fffaf9;
+      --black: #171313;
+      --soft-black: #332d2f;
+      --gold: #c8a75e;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      color: #f0f8ff;
-      text-align: center;
-      background-color: #0d0d2b;
-      background-image: 
-        url('https://www.transparenttextures.com/patterns/stardust.png'), 
-        linear-gradient(180deg, #0a0a23, #0d0d2b);
-      background-repeat: repeat;
+      color: var(--black);
+      font-family: "Montserrat", sans-serif;
+
+      background:
+        linear-gradient(
+          rgba(255, 250, 250, 0.90),
+          rgba(255, 247, 249, 0.94)
+        ),
+        url("roses-background.jpg");
+
+      background-color: var(--cream);
+      background-position: center;
       background-size: cover;
       background-attachment: fixed;
     }
 
+    a {
+      color: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 26px;
+    }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 84px 28px 70px;
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.79);
+      border: 1px solid rgba(200, 167, 94, 0.42);
+      border-radius: 26px;
+
+      box-shadow:
+        0 24px 65px rgba(58, 38, 43, 0.11);
+
+      backdrop-filter: blur(9px);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(233, 166, 183, 0.16);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -125px;
+      left: -75px;
+    }
+
+    .hero::after {
+      right: -90px;
+      bottom: -130px;
+    }
+
+    .eyebrow {
+      position: relative;
+      margin: 0 0 19px;
+      color: var(--deep-pink);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
     h1 {
-      font-size: 2.8rem;
-      margin-top: 2rem;
-      color: #ffffff;
-      text-shadow: 0 0 10px #8ab4f8;
+      position: relative;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 600;
+      line-height: 0.95;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #cbd5e1;
-      margin-bottom: 2rem;
+    .gold-line {
+      width: 105px;
+      height: 2px;
+      margin: 30px auto 25px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
     }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      flex-wrap: wrap;
+    .identity-line {
+      position: relative;
+      max-width: 950px;
+      margin: 0 auto;
+
+      color: var(--soft-black);
+      font-size: clamp(0.75rem, 1.8vw, 0.98rem);
+      font-weight: 500;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
     }
 
-    .social-icons a img {
-      width: 80px;
-      height: 80px;
+    .identity-line a {
+      color: var(--deep-pink);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .identity-line a:hover {
+      text-decoration: underline;
+    }
+
+    .intro {
+      position: relative;
+      max-width: 680px;
+      margin: 27px auto 0;
+
+      color: #66595d;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+      line-height: 1.6;
+    }
+
+    /* LINKS */
+
+    .links-section {
+      padding-top: 62px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .section-heading p {
+      margin: 0 0 8px;
+      color: var(--deep-pink);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .link-card {
+      position: relative;
+      min-height: 290px;
+      overflow: hidden;
+      isolation: isolate;
+
+      border: 1px solid rgba(200, 167, 94, 0.46);
       border-radius: 20px;
-      object-fit: cover;
-      box-shadow: 0 0 15px #00ffff;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--black);
+
+      box-shadow:
+        0 18px 42px rgba(55, 34, 40, 0.14);
+
+      text-decoration: none;
+
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
     }
 
-    .social-icons a img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #00ffff;
+    .link-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 26px 55px rgba(55, 34, 40, 0.24);
     }
 
-    .project {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.07); /* slightly lighter */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  backdrop-filter: blur(12px);
-}
+    .card-image {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
 
-.project h3 {
-  font-size: 1.6rem;
-  color: #ffffff; /* stay bright for headings */
-  margin-bottom: 1rem;
-}
+      background-position: center;
+      background-size: cover;
 
-.project p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #d0d6f9; /* softer lavender-blue tone for easy reading */
-}
+      transition: transform 0.4s ease;
+    }
+
+    .link-card:hover .card-image {
+      transform: scale(1.05);
+    }
+
+    .link-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.05) 20%,
+          rgba(0, 0, 0, 0.88) 100%
+        );
+    }
+
+    .card-content {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      padding: 25px;
+      color: white;
+      text-align: left;
+    }
+
+    .card-category {
+      display: inline-block;
+      margin-bottom: 10px;
+
+      color: #f1d185;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      line-height: 1.05;
+    }
+
+    .card-content p {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--gold);
+      font-size: 1.25rem;
+      transition: transform 0.25s ease;
+    }
+
+    .link-card:hover .arrow {
+      transform: translateX(7px);
+    }
+
+    /* PREVIEW IMAGES */
+
+    .gn15 .card-image {
+      background-image:
+        url("gn15-preview.jpg"),
+        linear-gradient(135deg, #17152f, #6b367d);
+    }
+
+    .instagram .card-image {
+      background-image:
+        url("instagram-preview.jpg"),
+        linear-gradient(135deg, #f5b3c3, #a96a7d);
+    }
+
+    .tiktok .card-image {
+      background-image:
+        url("tiktok-preview.jpg"),
+        linear-gradient(135deg, #111111, #d67491);
+    }
+
+    .pinterest .card-image {
+      background-image:
+        url("pinterest-preview.jpg"),
+        linear-gradient(135deg, #fff1f3, #cc8995);
+    }
+
+    .github .card-image {
+      background-image:
+        url("github-preview.jpg"),
+        linear-gradient(135deg, #161313, #765f67);
+    }
+
+    .youtube .card-image {
+      background-image:
+        url("youtube-preview.jpg"),
+        linear-gradient(135deg, #f3bac6, #711729);
+    }
+
+    /* ABOUT */
+
+    .about-section {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 0;
+
+      margin-top: 66px;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(200, 167, 94, 0.38);
+      border-radius: 22px;
+
+      box-shadow:
+        0 18px 48px rgba(55, 34, 40, 0.12);
+    }
+
+    .about-image {
+      min-height: 430px;
+
+      background:
+        linear-gradient(
+          rgba(233, 166, 183, 0.08),
+          rgba(23, 19, 19, 0.14)
+        ),
+        url("kristal-photo.jpg");
+
+      background-color: var(--light-pink);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .about-content {
+      padding: 58px 50px;
+    }
+
+    .about-label {
+      margin: 0 0 10px;
+      color: var(--deep-pink);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .about-content h2 {
+      margin: 0 0 20px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+    }
+
+    .about-content p {
+      color: #544a4d;
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+
+    .highlight {
+      color: var(--deep-pink);
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      margin-top: 62px;
+      padding: 50px 28px;
+      text-align: center;
+
+      background: var(--black);
+      border: 1px solid rgba(200, 167, 94, 0.62);
+      border-radius: 22px;
+
+      color: white;
+    }
+
+    .contact-label {
+      color: #e8c875;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .contact-section h2 {
+      margin: 12px 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 600;
+    }
+
+    .contact-section p {
+      max-width: 590px;
+      margin: 0 auto 26px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.75;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 15px 30px;
+
+      background: var(--pink);
+      border: 1px solid #f2bdc9;
+
+      color: var(--black);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .contact-button:hover {
+      background: var(--gold);
+      transform: translateY(-3px);
+    }
 
     footer {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: #94a3b8;
+      padding: 34px 10px 5px;
+      color: #6c6264;
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .link-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-section {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 370px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .page {
+        padding: 13px;
+      }
+
+      .hero {
+        padding: 62px 18px 48px;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 3.15rem;
+      }
+
+      .identity-line {
+        font-size: 0.7rem;
+      }
+
+      .links-section {
+        padding-top: 45px;
+      }
+
+      .link-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .link-card {
+        min-height: 255px;
+      }
+
+      .about-content {
+        padding: 40px 25px;
+      }
+
+      .about-image {
+        min-height: 320px;
+      }
+
+      .contact-section {
+        padding: 42px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <main class="page">
+    <div class="container">
 
-  <h1>THE KRISTAL EFFECT</h1>
-  <h2>Galactic Nomad</h2>
+      <section class="hero">
+        <p class="eyebrow">Mindset • Innovation • Elevation</p>
 
-  <div class="social-icons">
-    <a href="https://tiktok.com/@thekristaleffect" target="_blank">
-      <img src="tiktok_icon.png" alt="TikTok">
-    </a>
-    <a href="https://github.com/thekristaleffect" target="_blank">
-      <img src="github_icon.png" alt="GitHub">
-    </a>
-    <a href="https://www.pinterest.com/thekristaleffect/" target="_blank">
-      <img src="pinterest_icon.png" alt="Pinterest">
-    </a>
-    <a href="https://www.instagram.com/thekristaleffect/" target="_blank">
-      <img src="instagram_icon.png" alt="Instagram">
-    </a>
-    <a href="https://youtube.com/@thekristaleffect" target="_blank">
-      <img src="youtube_icon.png" alt="YouTube">
-    </a>
-  </div>
+        <h1>THE KRISTAL EFFECT</h1>
 
- <div class="project">
-  <h3>About Me🌟</h3>
- <section style="font-family: 'Orbitron', sans-serif; color: #f0f8ff; padding: 2rem; line-height: 1.6; background-color: #0d0d2b;">
-  <h2 style="font-size: 2rem; margin-bottom: 1rem;">🏠 Home of the Galactic Nomad 🛸✨</h2>
-  
-  <p>I’m a digital transformation enthusiast, IT strategist, and creative visionary who believes tech should feel both magical and meaningful.</p>
+        <div class="gold-line"></div>
 
-  <p>By day, I lead agile IT projects, streamline systems, and build future-ready solutions across cloud and AI platforms. By night? I’m the founder of <strong>Galactic Nomad</strong> a space-inspired brand exploring the universe of tech, self-expression, and innovation.</p>
+        <div class="identity-line">
+          Girl Boss |
+          Entrepreneur |
+          IT/AI Enthusiast |
+          Astrophilic |
+          <a href="#contact">Contact</a>
+        </div>
 
-  <p>With certifications in <strong>ITIL 4, AI, and Agile delivery</strong>, plus an <strong>MBA</strong> and a marketing strategy certificate from <strong>Cornell</strong>, I bring both structure and stardust to every project. My background in multimedia and communication helps me translate complex ideas into impactful, human-centered tech experiences.</p>
+        <p class="intro">
+          Where ambition, creativity, technology and a love for the cosmos
+          come together.
+        </p>
+      </section>
 
-  <p>🌙 <strong>The Kristal Effect</strong> is where lifestyle, learning, and leadership collide empowering others to dream bigger, code smarter, and explore their own galaxies of potential.</p>
+      <section class="links-section">
+        <div class="section-heading">
+          <p>Explore My Universe</p>
+          <h2>Connect With The Kristal Effect</h2>
+        </div>
 
-  <p><em>This GitHub is my launchpad 🚀</em><br>
-  Expect a constellation of experiments, side projects, and tech tools designed to inspire.</p>
+        <div class="link-grid">
 
-  <p>Let’s collaborate, innovate, and make waves in both the digital world and the stars above 💫🧠</p>
-</section>
+          <a
+            class="link-card gn15"
+            href="https://www.gn15.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-image"></div>
 
-</div>
+            <div class="card-content">
+              <span class="card-category">Brand</span>
+              <h3>GN15</h3>
 
-  <footer>
-    © 2025 The Kristal Effect | Galactic Nomad | Built on GitHub Pages
-  </footer>
+              <p>
+                Galactic Nomad 15 — space-inspired streetwear,
+                design and creative exploration.
+              </p>
 
+              <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a
+            class="link-card instagram"
+            href="https://www.instagram.com/thekristaleffect/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-image"></div>
+
+            <div class="card-content">
+              <span class="card-category">Social</span>
+              <h3>Instagram</h3>
+
+              <p>
+                Lifestyle, creativity, business and
+                behind-the-scenes moments.
+              </p>
+
+              <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a
+            class="link-card tiktok"
+            href="https://tiktok.com/@thekristaleffect"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-image"></div>
+
+            <div class="card-content">
+              <span class="card-category">Video</span>
+              <h3>TikTok</h3>
+
+              <p>
+                Creative technology, lifestyle content
+                and digital inspiration.
+              </p>
+
+              <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a
+            class="link-card pinterest"
+            href="https://www.pinterest.com/thekristaleffect/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-image"></div>
+
+            <div class="card-content">
+              <span class="card-category">Inspiration</span>
+              <h3>Pinterest</h3>
+
+              <p>
+                Fashion, branding, technology
+                and cosmic aesthetic inspiration.
+              </p>
+
+              <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a
+            class="link-card github"
+            href="https://github.com/thekristaleffect"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-image"></div>
+
+            <div class="card-content">
+              <span class="card-category">Technology</span>
+              <h3>GitHub</h3>
+
+              <p>
+                Digital transformation, AI experiments
+                and creative technology projects.
+              </p>
+
+              <span class="arrow">→</span>
+            </div>
+          </a>
+
+          <a
+            class="link-card youtube"
+            href="https://youtube.com/@thekristaleffect"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="card-image"></div>
+
+            <div class="card-content">
+              <span class="card-category">Watch</span>
+              <h3>YouTube</h3>
+
+              <p>
+                Travel, technology, lifestyle
+                and The Kristal Effect journey.
+              </p>
+
+              <span class="arrow">→</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div
+          class="about-image"
+          role="img"
+          aria-label="Kristal"
+        ></div>
+
+        <div class="about-content">
+          <p class="about-label">Meet the Founder</p>
+
+          <h2>Meet Kristal</h2>
+
+          <p>
+            I’m an IT professional, entrepreneur, AI enthusiast
+            and founder of The Kristal Effect.
+          </p>
+
+          <p>
+            I blend technology, creative innovation, strategy
+            and storytelling to design experiences that inspire
+            people to dream bigger and build smarter.
+          </p>
+
+          <p>
+            Whether I’m exploring artificial intelligence,
+            creating digital projects or building GN15,
+            my goal is to make technology feel meaningful,
+            imaginative and empowering.
+          </p>
+
+          <p class="highlight">
+            Empower. Inspire. Innovate.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <span class="contact-label">Let’s Connect</span>
+
+        <h2>Ready to Create an Effect?</h2>
+
+        <p>
+          Connect with me for collaborations, creative technology,
+          digital transformation, content and brand opportunities.
+        </p>
+
+        <a
+          class="contact-button"
+          href="mailto:your-email@example.com"
+        >
+          Contact Me →
+        </a>
+      </section>
+
+      <footer>
+        © 2026 The Kristal Effect. All rights reserved.
+      </footer>
+
+    </div>
+  </main>
 </body>
 </html>
